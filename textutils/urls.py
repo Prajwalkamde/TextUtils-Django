@@ -26,9 +26,5 @@ urlpatterns = [
     path('',views.index,name='index'),
     path('about',views.about,name='about'),
     path('analyze',views.analyze,name='analyze'),
-
-#Added
-    url(r'^static/(?P<path>.*)$', serve,{'document_root':settings.STATIC_URL}), 
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
    
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
