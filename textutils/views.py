@@ -149,7 +149,7 @@ def analyze(request):
     
     if(removepunc != "on" and newlineremove!="on" and extraspaceremove!="on" and capsall!="on" and numberremover != "on"):
         # return HttpResponse("<h2>Please select any operation and try again!</h2>")
-        return redirect('error')
+        return render(request, 'error.html')
 
     return render(request, 'analyze.html', params)
 
