@@ -76,7 +76,7 @@
 
 # I have created this file - Harry
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 def index(request):
@@ -148,7 +148,8 @@ def analyze(request):
 
     
     if(removepunc != "on" and newlineremove!="on" and extraspaceremove!="on" and capsall!="on" and numberremover != "on"):
-        return HttpResponse("please select any operation and try again")
+        # return HttpResponse("<h2>Please select any operation and try again!</h2>")
+        return redirect('error')
 
     return render(request, 'analyze.html', params)
 
